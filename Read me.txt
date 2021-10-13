@@ -1,1 +1,4 @@
-full running game using pixijs and react
+full running game using pixijs and react.
+1.adding pixijs.
+2. install reactjs
+3. run game check result etc
