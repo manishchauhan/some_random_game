@@ -1,0 +1,1 @@
+full running game using pixijs and react
