@@ -92,4 +92,4 @@ list.appendNode('b');
 list.appendNode('c');
 list.appendNode('d');
 //list.insertAfter("b", "xyz");
-//list.display();
+list.display();
