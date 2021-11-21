@@ -45,5 +45,6 @@ interface Human {
       console.log(error);
     });
   
-  //genric
+  //Promise
+
   
