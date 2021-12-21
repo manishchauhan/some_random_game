@@ -84,3 +84,24 @@ Function.prototype.myBind = function () {
   }, 0);
   console.log(sum);
   
+  //polyfill for call
+
+Function.prototype.myCall = function () {
+    var fun = this;
+    var obj = arguments[0];
+    var vars = [];
+    for (let i = 1; i < arguments.length; i++) {
+      vars.push(arguments[i]);
+    }
+    return fun.apply(obj, vars.splice(0));
+  };
+  function showAll(job, done) {
+    console.log(this.name + '' + this.age + ' ' + job + '-----------' + done);
+  }
+  
+  var obj2 = {
+    name: 'manu',
+    age: 100,
+  };
+  let x = showAll.myCall(obj2, 'job', 'hey');
+  
