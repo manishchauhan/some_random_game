@@ -1,5 +1,4 @@
-//Bind polyfill
-//Polyfill for bind--------------------------------------------------------1
+//Polyfill for bind
 Function.prototype.myBind = function () {
     if (typeof arguments[0] === 'function') {
       throw new Error('Function not allowed');
@@ -28,9 +27,9 @@ Function.prototype.myBind = function () {
   let result = display.myBind(object, 'movies');
   result();
   
-  //polyfill for higher order function------------------------------------------2
+  //polyfill for higher order function
   
-  //polyfill for map------------------------------------------------------------2.1
+  //polyfill for map
   Array.prototype.myMap = function (callBack) {
     var results = [];
     for (var i = 0; i < this.length; i++) {
@@ -46,7 +45,7 @@ Function.prototype.myBind = function () {
   });
   console.log('result', arr1);
   
-  //polyfill for filter-----------------------------------------------------------2.2
+  //polyfill for filter
   Array.prototype.myFilter = function (callBack) {
     var results = [];
   
@@ -65,5 +64,23 @@ Function.prototype.myBind = function () {
   });
   console.log('result', arrF1);
   
+  //polyfill for reduce
   
+  Array.prototype.myReduce = function (callBack, acc) {
+    for (var i = 0; i < this.length; i++) {
+      if (acc === undefined) {
+        acc = this[i];
+      } else {
+        acc = callBack.call(null, acc, this[i], i, this);
+      }
+    }
+    return acc;
+  };
+  
+  let affA = [1, 2, 3, 4, 5];
+  
+  let sum = affA.myReduce((value, acc) => {
+    return acc + value;
+  }, 0);
+  console.log(sum);
   
