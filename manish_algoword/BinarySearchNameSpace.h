@@ -23,6 +23,6 @@ namespace BinarySearchNameSpace
 	void floor(const std::vector<int>& vectors);
 	
 	void howManyTimesArrayRotated();
-	
+	void Search_in_rotatedArray();
 };
 

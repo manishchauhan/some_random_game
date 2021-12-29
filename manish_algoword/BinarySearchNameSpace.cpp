@@ -71,3 +71,13 @@ void BinarySearchNameSpace::howManyTimesArrayRotated()
 	
 
 }
+void BinarySearchNameSpace::Search_in_rotatedArray()
+{
+	std::vector<int> data = { 7,9,11,12,13,14,15,1,2,3,4,5 };
+	unique_ptr<BinarySearchSoution<int>> binarySearchSoution = std::make_unique < BinarySearchSoution<int>>();
+	for (auto d : data)
+	{
+		int index=binarySearchSoution->Search_in_rotatedArray(data,d);
+		std::cout<<"Search index would be..." << index << endl;
+	}
+}

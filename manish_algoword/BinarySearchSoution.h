@@ -197,6 +197,51 @@ public:
 		return -1;
 	}
 	//Search element in a circular sorted array very very important
+	int Search_in_rotatedArray(const vector<int> &data,int value)
+	{
+		if (data.size() < 1)
+		{
+			return -1;
+		}
+		int low = 0;
+		int high = data.size() - 1;
+		while (low<=high)
+		{
+			int mid = (low + high) / 2;
+			//base case
+			if (data.at(mid) == value)
+			{
+				return mid;
+			}
+			//condition  11,12,13,14,15,1,2,3,4,5 
+			else if (data.at(mid) <data.at(high))
+			{
+				if (value >= data.at(mid) && value <=data.at(high))
+				{
+					low = mid + 1;
+				}
+				else
+				{
+					high = mid - 1;
+				}
+			}
+			else
+			{
 
+				if (value >= data.at(low) && value <= data.at(mid))
+				{
+				
+					
+					
+					high = mid - 1;
+				}
+				else
+				{
+					low = mid + 1;
+				}
+			}
+		}
+		return -1;
+	}
 };
 
