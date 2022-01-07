@@ -24,12 +24,24 @@
     <ClCompile Include="BinarySearchNameSpace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AdQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RecursionAndMemo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BinarySearchSoution.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BinarySearchNameSpace.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AdQueue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RecursionAndMemo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

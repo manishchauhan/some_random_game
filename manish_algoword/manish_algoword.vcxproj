@@ -116,6 +116,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -139,13 +140,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AdQueue.cpp" />
     <ClCompile Include="BinarySearchNameSpace.cpp" />
     <ClCompile Include="BinarySearchSoution.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RecursionAndMemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AdQueue.h" />
     <ClInclude Include="BinarySearchNameSpace.h" />
     <ClInclude Include="BinarySearchSoution.h" />
+    <ClInclude Include="RecursionAndMemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
