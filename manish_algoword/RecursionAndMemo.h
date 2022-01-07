@@ -2,6 +2,7 @@
 #include <iostream>
 #include<unordered_map>
 #include<algorithm>
+#include <vector>
 #include<math.h>
 class RecursionAndMemo
 {
@@ -20,6 +21,9 @@ public:
 	void displayLongestSubStr();
 	//substring
 	//sub sequence
-	int LongestSubSeqDynamic(const std::string& first, const std::string& second, int indexA, int indexB);
+	void displayLongestSubSeqDynamic();
+	int LongestSubSeqDynamic(const std::string& first, const std::string& second);
+	//Check if two strings have a common substring
+	bool checkCommonSubstring(const std::string& first, const std::string& second);
 };
 

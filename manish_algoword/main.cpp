@@ -11,7 +11,8 @@ int main()
 {
 	unique_ptr<RecursionAndMemo> recursionAndMemo = std::make_unique<RecursionAndMemo>();
 	recursionAndMemo->displayLongestSubSeq();
-	recursionAndMemo->displayLongestSubStr();
+	recursionAndMemo->displayLongestSubSeqDynamic();
+	cout << recursionAndMemo->checkCommonSubstring("x","hell") << endl;
 	//vector<int> vec = { 11,2,133,7,9 };
 	//unique_ptr<AdQueue<int>> adQueue = std::make_unique < AdQueue<int>>();
 	//adQueue->maxQueue(vec);

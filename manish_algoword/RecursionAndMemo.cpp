@@ -77,12 +77,58 @@ void RecursionAndMemo::displayLongestSubStr()
 	int answer = LongestSubStr(first, second, first.size(), second.size(),0);
 	std::cout << "The final answer is substr " << answer << std::endl;
 }
+void RecursionAndMemo::displayLongestSubSeqDynamic()
+{
+	//Input : X = “abcdxyz”, y = “xyzabcd” 
+	std::string first = "AGGTAB";
+	std::string second = "GXTXAYB";
+	int answer = LongestSubSeqDynamic(first, second);
+	std::cout << "The final answer is subseq dynamic " << answer << std::endl;
+}
 
-int RecursionAndMemo::LongestSubSeqDynamic(const std::string& first, const std::string& second, int indexA, int indexB)
+int RecursionAndMemo::LongestSubSeqDynamic(const std::string& first, const std::string& second)
 {
 	if (first.size() == 0 || second.size() == 0)
 	{
 		return 0;
 	}
-	return 0;
+	std::vector<std::vector<int>> table(first.size() + 1, std::vector<int>(second.size() + 1));
+	for (int i = 0; i < table.size(); i++)
+	{
+
+		for (int j = 0; j < table.at(0).size(); j++)
+		{
+			if (i == 0 || j == 0)
+			{
+				table.at(i).at(j) = 0;
+			}
+			else if (first.at(i - 1) == second.at(j - 1))
+			{
+				table.at(i).at(j) = 1 + table.at(i - 1).at(j - 1);
+			}
+			else
+			{
+				table.at(i).at(j) = std::max(table.at(i-1).at(j), table.at(i ).at(j-1));
+			}
+
+		}
+	}
+
+		return table.at(first.size()).at(second.size());
+}
+
+bool RecursionAndMemo::checkCommonSubstring(const std::string& first, const std::string& second)
+{
+	const int max_size = 26;
+	std::vector<bool> statusTable(max_size);
+	for (int i = 0; i < first.size(); i++)
+	{
+		statusTable.at(first.at(i) - 'a') = true;
+	}
+	for (int i = 0; i < second.size(); i++)
+	{
+		if (statusTable.at(second.at(i) - 'a'))
+			return true;
+	}
+	return false;
 }
